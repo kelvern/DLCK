@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KelzNxT DLC Free - AI Automated MCPE Repository</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Poppins', 'sans-serif'] },
+                    colors: {
+                        darkBg: '#0f1115',
+                        darkCard: '#161920',
+                        accentBlue: '#2563EB',
+                        accentYellow: '#FACC15',
+                    },
+                    boxShadow: {
+                        'blue-glow': '0 0 20px rgba(37, 99, 235, 0.4)',
+                        'yellow-glow': '0 0 20px rgba(250, 204, 21, 0.4)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0f1115;
+            background-image: 
+                linear-gradient(rgba(22, 25, 32, 0.85), rgba(15, 17, 21, 0.98)),
+                radial-gradient(circle at 50% 30%, rgba(37, 99, 235, 0.15), transparent 60%),
+                repeating-conic-gradient(#131722 0% 25%, #171c2a 0% 50%);
+            background-size: auto, auto, 40px 40px;
+            background-attachment: fixed;
+            color: #E5E7EB;
+        }
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #0f1115; }
+        ::-webkit-scrollbar-thumb { background: #2563EB; border: 2px solid #0f1115; border-radius: 6px; }
+        ::-webkit-scrollbar-thumb:hover { background: #FACC15; }
+        .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    </style>
+</head>
+<body class="font-sans antialiased min-h-screen flex flex-col relative overflow-x-hidden">
+
+    <header class="sticky top-0 z-40 bg-darkBg/80 backdrop-blur-md border-b border-gray-800">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-3 group">
+                <div class="bg-accentBlue p-2.5 rounded-xl text-white font-bold text-xl tracking-wider shadow-blue-glow border-b-4 border-blue-800">KNX</div>
+                <span class="text-xl font-bold tracking-tight text-white">KelzNxT <span class="text-accentYellow">DLC Free</span></span>
+            </a>
+            <a href="#request-section" class="text-sm font-medium text-gray-400 hover:text-accentYellow transition-colors flex items-center gap-1.5">
+                <i class="fa-solid fa-code-pull-request text-accentYellow"></i> Request DLC
+            </a>
+        </div>
+    </header>
+
+    <section class="relative py-16 md:py-24">
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <span class="inline-block px-4 py-1.5 text-xs font-bold text-black bg-accentYellow rounded-lg shadow-yellow-glow mb-4 uppercase border-b-2 border-yellow-600">
+                <i class="fa-solid fa-robot mr-1"></i> Powered By Groq AI Engine
+            </span>
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white mb-6">
+                Eksplorasi Katalog <br class="hidden sm:inline"><span class="text-transparent bg-clip-text bg-gradient-to-r from-accentBlue to-blue-400">Minecraft PE DLC</span>
+            </h1>
+            <p class="text-gray-400 max-w-2xl mx-auto text-base md:text-lg mb-8 leading-relaxed">
+                Platform pencarian metadata otomatis. Ulasan deskripsi analisis kecerdasan buatan dan poin fitur dibuat secara instan dan dinamis oleh AI.
+            </p>
+        </div>
+    </section>
+
+    <main id="repository" class="container mx-auto px-4 py-8 flex-grow">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-10 pb-6 border-b border-gray-800">
+            <div class="flex flex-wrap p-1.5 bg-gray-900/90 border border-gray-800 rounded-2xl gap-1">
+                <button onclick="filterCategory('all')" id="tab-all" class="tab-btn px-5 py-2.5 rounded-xl text-sm font-bold transition-all bg-accentBlue text-white shadow-blue-glow border-b-2 border-blue-800">All DLC</button>
+                <button onclick="filterCategory('Maps')" id="tab-Maps" class="tab-btn px-5 py-2.5 rounded-xl text-sm font-bold transition-all text-gray-400 hover:text-white">Maps</button>
+                <button onclick="filterCategory('Add-ons')" id="tab-Add-ons" class="tab-btn px-5 py-2.5 rounded-xl text-sm font-bold transition-all text-gray-400 hover:text-white">Add-ons</button>
+                <button onclick="filterCategory('Textures')" id="tab-Textures" class="tab-btn px-5 py-2.5 rounded-xl text-sm font-bold transition-all text-gray-400 hover:text-white">Textures</button>
+            </div>
+            <div class="relative w-full md:w-80">
+                <i class="fa-solid fa-magnifying-glass absolute left-4 top-3.5 text-gray-500 text-sm"></i>
+                <input type="text" id="search-input" oninput="handleSearch()" placeholder="Cari nama DLC..." class="w-full bg-gray-900/90 border border-gray-800 rounded-xl pl-11 pr-4 py-2.5 text-sm text-gray-200 focus:outline-none focus:border-accentBlue focus:ring-1 focus:ring-accentBlue">
+            </div>
+        </div>
+
+        <div id="content-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"></div>
+
+        <div id="empty-state" class="hidden text-center py-20 bg-darkCard/30 border border-gray-800/50 rounded-3xl">
+            <i class="fa-solid fa-cube text-5xl text-gray-600 mb-4 animate-bounce"></i>
+            <p class="text-gray-400 text-lg font-bold">DLC Tidak Ditemukan</p>
+        </div>
+    </main>
+
+    <div id="detail-modal" class="fixed inset-0 z-50 overflow-y-auto hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-darkCard border border-gray-800 rounded-3xl w-full max-w-3xl max-h-[90vh] overflow-y-auto shadow-2xl relative transform transition-all scale-95 opacity-0 duration-300" id="modal-card">
+            
+            <div class="p-6 border-b border-gray-800 flex justify-between items-start sticky top-0 bg-darkCard/95 backdrop-blur-sm z-10">
+                <div>
+                    <span id="modal-category" class="inline-block px-2.5 py-1 text-xs font-bold bg-blue-500/10 text-accentBlue border border-blue-500/20 rounded-md mb-2"></span>
+                    <h2 id="modal-title" class="text-2xl font-bold text-white tracking-wide"></h2>
+                </div>
+                <button onclick="closeModal()" class="p-2 bg-gray-800 hover:bg-gray-700 text-gray-400 hover:text-white rounded-xl">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+
+            <div class="p-6 space-y-6">
+                <div>
+                    <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-3">
+                        <i class="fa-brands fa-youtube text-red-500"></i> Video Trailer & Gameplay
+                    </h3>
+                    <div class="relative aspect-video w-full rounded-2xl overflow-hidden bg-black border border-gray-800 shadow-md">
+                        <iframe id="modal-video" class="w-full h-full" src="" title="YouTube Video Player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div class="bg-blue-950/20 border border-blue-900/30 p-5 rounded-2xl relative">
+                    <div class="absolute -top-3 left-4 bg-accentBlue text-white text-[10px] font-black uppercase px-2 py-0.5 rounded-md tracking-wider flex items-center gap-1">
+                        <i class="fa-solid fa-robot"></i> AI Review Insight
+                    </div>
+                    <p id="modal-ai-info" class="text-gray-300 text-sm leading-relaxed mt-1"></p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="bg-gray-900/60 border border-gray-800 p-4 rounded-xl">
+                        <h4 class="text-xs font-bold text-accentYellow uppercase mb-2"><i class="fa-solid fa-wand-magic-sparkles"></i> Fitur Utama (AI Generated)</h4>
+                        <ul id="modal-features" class="text-xs text-gray-400 space-y-1.5 list-disc list-inside"></ul>
+                    </div>
+                    <div class="bg-gray-900/60 border border-gray-800 p-4 rounded-xl flex flex-col justify-between">
+                        <div>
+                            <h4 class="text-xs font-bold text-gray-400 uppercase mb-2">Informasi Berkas</h4>
+                            <div class="text-xs space-y-2">
+                                <p class="text-gray-400">Kompatibilitas: <span class="text-white font-medium">Minecraft PE / Bedrock Terbaru</span></p>
+                                <p class="text-gray-400">Status Konten: <span class="text-green-400 font-medium"><i class="fa-solid fa-circle-check text-[10px]"></i> Tersedia Gratis</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-6 border-t border-gray-800 bg-gray-900/40 flex justify-end">
+                <a id="modal-download-btn" href="#" target="_blank" class="px-6 py-3 bg-accentBlue hover:bg-blue-700 text-white font-bold text-sm rounded-xl shadow-blue-glow border-b-4 border-blue-800 transition-all flex items-center gap-2">
+                    <i class="fa-solid fa-download"></i> Download DLC Gratis
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <section id="request-section" class="bg-gray-900/40 border-t border-gray-800 py-16">
+        <div class="container mx-auto px-4 max-w-4xl text-center">
+            <h2 class="text-3xl font-bold text-white mb-3"><i class="fa-solid fa-code-pull-request text-accentYellow mr-2"></i> Request DLC</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left mt-8">
+                <div class="bg-darkCard border border-blue-900/40 p-6 rounded-2xl flex flex-col justify-between hover:border-accentBlue/50 transition-all">
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-2">Paid Request</h3>
+                        <p class="text-gray-400 text-sm mb-6">Proses super kilat, DLC langsung dianalisis AI dan masuk baris depan katalog utama.</p>
+                    </div>
+                    <a href="https://sociabuzz.com/kelznxt/tribe" target="_blank" class="w-full text-center px-5 py-3 bg-accentBlue hover:bg-blue-700 text-white font-semibold rounded-xl border-b-4 border-blue-900 transition-all shadow-blue-glow">SociaBuzz Request <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></a>
+                </div>
+                <div class="bg-darkCard border border-yellow-900/30 p-6 rounded-2xl flex flex-col justify-between hover:border-accentYellow/40 transition-all">
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-2">Free Request</h3>
+                        <p class="text-gray-400 text-sm mb-6">Request melalui saluran WhatsApp resmi komunitas untuk rilis rujukan berkala.</p>
+                    </div>
+                    <a href="https://whatsapp.com/channel/0029Vb7bpZmDZ4LWqMELk603" target="_blank" class="w-full text-center px-5 py-3 border border-accentYellow text-accentYellow hover:bg-accentYellow hover:text-black font-semibold rounded-xl transition-all">Saluran WhatsApp <i class="fa-solid fa-users text-sm"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-darkBg border-t border-gray-800 py-8 text-sm text-gray-500">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div>&copy; 2026 <span class="text-gray-400 font-medium">KelzNxT DLC Free</span>.</div>
+        </div>
+    </footer>
+
+    <script>
+        // DATABASE BERSIH: Menyimpan link yt kamu dengan aman
+        const dlcDatabase = [
+            { 
+                id: 1, 
+                title: "Actions & Stuff", 
+                category: "Textures", 
+                image: "https://i.ibb.co/sdjNFz6B/image-13-2.png", 
+                youtubeId: "ZuCoxvRGruM", 
+                downloadUrl: "https://www.mediafire.com/file/750au2ensjaxtjk/Actions+Stuff+1.11+(resources).mcpack/file" 
+            }
+        ];
+
+        const GROQ_API_KEY = "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"; 
+        let activeFilter = 'all';
+        let activeSearch = '';
+
+        const contentGrid = document.getElementById('content-grid');
+        const emptyState = document.getElementById('empty-state');
+        const detailModal = document.getElementById('detail-modal');
+        const modalId = document.getElementById('modal-card');
+
+        window.addEventListener('DOMContentLoaded', () => renderRepository(dlcDatabase));
+
+        function renderRepository(data) {
+            contentGrid.innerHTML = '';
+            if (data.length === 0) { emptyState.classList.remove('hidden'); return; }
+            emptyState.classList.add('hidden');
+
+            data.forEach(item => {
+                const card = `
+                    <div onclick="openModal(${item.id})" class="bg-darkCard/80 border border-gray-800 rounded-2xl overflow-hidden hover:border-accentBlue/60 hover:scale-[1.02] transition-all duration-300 flex flex-col h-full cursor-pointer group shadow-lg">
+                        <div class="relative aspect-video w-full overflow-hidden bg-gray-900 border-b border-gray-800/50">
+                            <img src="${item.image}" alt="${item.title}" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        </div>
+                        <div class="p-5 flex flex-col flex-grow justify-between">
+                            <div>
+                                <span class="inline-block px-2.5 py-0.5 text-[11px] font-bold bg-blue-500/10 text-accentBlue border border-blue-500/20 rounded-md mb-3">Official ${item.category}</span>
+                                <h3 class="text-base font-bold text-white tracking-wide group-hover:text-accentYellow transition-colors line-clamp-2">${item.title}</h3>
+                            </div>
+                            <div class="mt-5 pt-3 border-t border-gray-800/60 text-xs text-accentBlue font-medium flex items-center justify-between">
+                                <span>Detail & AI Preview <i class="fa-solid fa-robot ml-1"></i></span>
+                                <span class="text-gray-600">Marketplace</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                contentGrid.insertAdjacentHTML('beforeend', card);
+            });
+        }
+
+        function filterCategory(cat) {
+            activeFilter = cat;
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('bg-accentBlue', 'text-white', 'shadow-blue-glow', 'border-b-2', 'border-blue-800');
+                btn.classList.add('text-gray-400');
+            });
+            const currentTab = document.getElementById(`tab-${cat}`);
+            currentTab.classList.remove('text-gray-400');
+            currentTab.classList.add('bg-accentBlue', 'text-white', 'shadow-blue-glow', 'border-b-2', 'border-blue-800');
+            executeFilterEngine();
+        }
+
+        function handleSearch() { activeSearch = document.getElementById('search-input').value.toLowerCase(); executeFilterEngine(); }
+
+        function executeFilterEngine() {
+            let processed = dlcDatabase;
+            if (activeFilter !== 'all') processed = processed.filter(item => item.category === activeFilter);
+            if (activeSearch.trim() !== '') processed = processed.filter(item => item.title.toLowerCase().includes(activeSearch));
+            renderRepository(processed);
+        }
+
+        async function openModal(id) {
+            const item = dlcDatabase.find(x => x.id === id);
+            if (!item) return;
+
+            document.getElementById('modal-title').innerText = item.title;
+            document.getElementById('modal-category').innerText = `Official ${item.category}`;
+            document.getElementById('modal-download-btn').href = item.downloadUrl;
+            
+            document.getElementById('modal-ai-info').innerHTML = `<span class="text-xs text-accentYellow"><i class="fa-solid fa-spinner fa-spin"></i> Merumuskan ulasan via Groq LPU...</span>`;
+            document.getElementById('modal-features').innerHTML = `<span class="text-xs text-gray-500"><i class="fa-solid fa-spinner fa-spin"></i> Menghitung poin fitur...</span>`;
+            
+            // AUTOMATIC EMBED FORMATTER (Mengekstrak ID bersih dari link utuh atau link pendek youtube)
+            if(item.youtubeId && item.youtubeId !== "#") {
+                const cleanId = item.youtubeId.includes('/') ? item.youtubeId.split('/').pop().split('?')[0] : item.youtubeId;
+                document.getElementById('modal-video').src = `https://www.youtube.com/embed/${cleanId}?rel=0&modestbranding=1&playsinline=1`;
+            } else {
+                document.getElementById('modal-video').src = '';
+            }
+
+            detailModal.classList.remove('hidden');
+            setTimeout(() => { modalId.classList.remove('scale-95', 'opacity-0'); modalId.classList.add('scale-100', 'opacity-100'); }, 50);
+            document.body.style.overflow = 'hidden';
+
+            try {
+                const systemPrompt = `Kamu adalah sistem AI handal yang bertugas mengekstrak metadata DLC Minecraft. Kamu HARUS mengembalikan respon dalam format JSON murni terstruktur tanpa teks pembuka/penutup tambahan. Format JSON harus seperti ini: {"deskripsi": "string teks ulasan maksimal 3 kalimat", "fitur": ["fitur 1", "fitur 2", "fitur 3", "fitur 4"]}`;
+                const userPrompt = `Berikan analisis mendalam untuk DLC Minecraft ini:
+                Nama Konten: ${item.title}
+                Kategori Konten: ${item.category}
+                
+                Buatlah deskripsi ulasan yang menarik (max 3 kalimat) serta 4 poin fitur utama yang masuk akal dan relevan dengan judul konten tersebut dalam format JSON objek.`;
+
+                const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+                    method: "POST",
+                    headers: {
+                        "Authorization": `Bearer ${GROQ_API_KEY}`,
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        model: "llama-3.3-70b-versatile",
+                        messages: [
+                            { role: "system", content: systemPrompt },
+                            { role: "user", content: userPrompt }
+                        ],
+                        temperature: 0.4,
+                        response_format: { type: "json_object" }
+                    })
+                });
+
+                if (!response.ok) throw new Error("Groq API bermasalah.");
+
+                const resultData = await response.json();
+                const aiData = JSON.parse(resultData.choices[0].message.content);
+                
+                document.getElementById('modal-ai-info').innerText = aiData.deskripsi;
+                
+                const featuresList = document.getElementById('modal-features');
+                featuresList.innerHTML = '';
+                aiData.fitur.forEach(feat => {
+                    featuresList.insertAdjacentHTML('beforeend', `<li>${feat}</li>`);
+                });
+
+            } catch (error) {
+                console.error("AI Generation Error:", error);
+                document.getElementById('modal-ai-info').innerText = `Ulasan otomatis tidak dapat dimuat. Konten "${item.title}" ini merupakan modifikasi resmi berjenis ${item.category} untuk mengoptimalkan pengalaman dunia bermain Minecraft PE Anda.`;
+                document.getElementById('modal-features').innerHTML = `<li>Optimalisasi Kinerja Grafis</li><li>Integrasi Dunia Survival</li><li>Kompatibilitas Versi Bedrock</li><li>Pemasangan Instan Sekali Klik</li>`;
+            }
+        }
+
+        function closeModal() {
+            modalId.classList.remove('scale-100', 'opacity-100'); modalId.classList.add('scale-95', 'opacity-0');
+            setTimeout(() => { detailModal.classList.add('hidden'); document.getElementById('modal-video').src = ''; }, 200);
+            document.body.style.overflow = 'auto';
+        }
+
+        detailModal.addEventListener('click', (e) => { if (e.target === detailModal) closeModal(); });
+    </script>
+</body>
+</html>
