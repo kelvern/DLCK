@@ -149,17 +149,9 @@
                     <p id="modal-ai-info" class="text-gray-300 text-sm leading-relaxed mt-1"></p>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div class="bg-gray-900/60 border border-gray-800 p-4 rounded-xl">
-                        <h4 class="text-xs font-bold text-accentYellow uppercase mb-2"><i class="fa-solid fa-wand-magic-sparkles"></i> Fitur Utama (AI Generated)</h4>
-                        <ul id="modal-features" class="text-xs text-gray-400 space-y-1.5 list-disc list-inside"></ul>
-                    </div>
-                    <div class="bg-gray-900/60 border border-gray-800 p-4 rounded-xl flex flex-col justify-between">
-                        <div>
-                            <h4 class="text-xs font-bold text-white uppercase mb-2"><i class="fa-solid fa-clock-rotate-left text-gray-500 mr-1"></i> Deskripsi Komunitas & Rilis</h4>
-                            <p id="modal-spec-changelog" class="text-xs text-gray-400 italic leading-relaxed">-</p>
-                        </div>
-                    </div>
+                <div class="bg-gray-900/60 border border-gray-800 p-4 rounded-xl">
+                    <h4 class="text-xs font-bold text-accentYellow uppercase mb-2"><i class="fa-solid fa-wand-magic-sparkles"></i> Fitur Utama (AI Generated)</h4>
+                    <ul id="modal-features" class="text-xs text-gray-400 space-y-1.5 list-disc list-inside"></ul>
                 </div>
             </div>
 
@@ -200,9 +192,6 @@
     </footer>
 
     <script>
-        // ==========================================
-        // DATABASE MAKLUMAT DLC (BISA KAMU ISI MANUAL)
-        // ==========================================
         const dlcDatabase = [
             { 
                 id: 1, 
@@ -214,7 +203,7 @@
                 fileSize: "25.92 MB",         
                 version: "1.26.23+",          
                 author: "Overille Studios",  
-                extension: "mcpack",            
+                extension: "mcpack"
             },
             {
                 id: 2,
@@ -226,56 +215,56 @@
                 fileSize: "969.50 KB",           
                 version: "1.26.23+",           
                 author: "Bedrock Productions",           
-                extension: "mcaddon",       
+                extension: "mcaddon"
             },
             {
                 id: 3,
                 title: "Magical Furniture",
-                category: "Add-ons",           // Pilihan kategori wajib: "Maps", "Add-ons", atau "Textures"
-                image: "https://i.ibb.co/RT8vGHHs/image-13-7.png", // Isi link gambar screenshot dlc kamu
-                youtubeId: "ZgpXM8uuOB-GUAZ4",                // Isi ID video YouTube (misalnya: ZuCoxvRGruM) atau biarkan "#" jika tidak ada
-                downloadUrl: "https://www.mediafire.com/file/zhu5l48w17mmn93/Magical+Furniture+Add-On+(addon).mcaddon/file",             // Isi link download Mediafire berkas kamu
-                fileSize: "4.49 MB",           // <--- ISI MANUALLY: Ukuran berkas baru
-                version: "1.26.23+",            // <--- ISI MANUALLY: Versi game support
-                author: "Odyssey Builds",        // <--- ISI MANUALLY: Siapa pembuat aslinya
-                extension: "mcaddon",           // <--- ISI MANUALLY: Format ekstensi berkas
+                category: "Add-ons",           
+                image: "https://i.ibb.co/RT8vGHHs/image-13-7.png", 
+                youtubeId: "MPrlwMyYAlo",                
+                downloadUrl: "https://www.mediafire.com/file/zhu5l48w17mmn93/Magical+Furniture+Add-On+(addon).mcaddon/file",             
+                fileSize: "4.49 MB",           
+                version: "1.26.23+",            
+                author: "Odyssey Builds",        
+                extension: "mcaddon"
             },
             {
                 id: 4,
                 title: "DNA",
-                category: "Add-ons",              // Pilihan kategori wajib: "Maps", "Add-ons", atau "Textures"
+                category: "Add-ons",              
                 image: "https://i.ibb.co/1tYyKKbn/image-13-6.png", 
-                youtubeId: "DCzL57UsnGjOEnoX",                
+                youtubeId: "gS96ug4u4WI",                
                 downloadUrl: "https://www.mediafire.com/file/5mo89b155ywlvbc/DNA+Add-On+(addon).mcaddon/file",             
                 fileSize: "1007.89 KB",           
                 version: "1.26.23+",            
                 author: "CodeStudios",        
-                extension: "mcaddon",          
+                extension: "mcaddon"
             },
             {
                 id: 5,
                 title: "Rune Spells",
-                category: "Add-ons",              // Pilihan kategori wajib: "Maps", "Add-ons", atau "Textures"
+                category: "Add-ons",              
                 image: "https://i.ibb.co/5XSmwj6r/image-13-5.png", 
-                youtubeId: "2kXWNFQAMlPJQg",                
+                youtubeId: "K9y7DHnpH98",                
                 downloadUrl: "https://www.mediafire.com/file/vw59tapoq9qjvm4/Rune+Spells+(addon).mcaddon/file",             
                 fileSize: "2.44 MB",           
                 version: "1.26.23+",            
                 author: "Gearblocks",        
-                extension: "mcaddon",          
+                extension: "mcaddon"
             },
             {
                 id: 6,
                 title: "Eternal Caves",
-                category: "Add-ons",              // Pilihan kategori wajib: "Maps", "Add-ons", atau "Textures"
+                category: "Add-ons",              
                 image: "https://i.ibb.co/Zp3MBMcG/image-13-4.png", 
-                youtubeId: "8qUKXCcea4wK5oq0",                
+                youtubeId: "QFSbJAdV-ps",                
                 downloadUrl: "https://www.mediafire.com/file/apgcbmeke8zwi0x/Eternal+Caves+Add-On+(addon).mcaddon/file",             
                 fileSize: "14.23 MB",           
                 version: "1.26.23+",            
                 author: "Panascias",        
-                extension: "mcaddon",          
-            },
+                extension: "mcaddon"
+            }
         ];
 
         const GROQ_API_KEY = "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"; 
@@ -352,13 +341,15 @@
             document.getElementById('modal-spec-version').innerText = item.version;
             document.getElementById('modal-spec-author').innerText = item.author;
             document.getElementById('modal-spec-ext').innerText = item.extension;
-            document.getElementById('modal-spec-changelog').innerText = item.changelog;
             
             document.getElementById('modal-ai-info').innerHTML = `<span class="text-xs text-accentYellow"><i class="fa-solid fa-spinner fa-spin"></i> Merumuskan ulasan komprehensif via Groq LPU...</span>`;
             document.getElementById('modal-features').innerHTML = `<span class="text-xs text-gray-500"><i class="fa-solid fa-spinner fa-spin"></i> Menganalisis poin modifikasi...</span>`;
             
             if(item.youtubeId && item.youtubeId !== "#") {
-                const cleanId = item.youtubeId.includes('/') ? item.youtubeId.split('/').pop().split('?')[0] : item.youtubeId;
+                let cleanId = item.youtubeId;
+                if (cleanId.includes('/')) {
+                    cleanId = cleanId.split('/').pop().split('?')[0];
+                }
                 document.getElementById('modal-video').src = `https://www.youtube.com/embed/${cleanId}?rel=0&modestbranding=1&playsinline=1`;
             } else {
                 document.getElementById('modal-video').src = '';
