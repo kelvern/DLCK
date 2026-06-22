@@ -4,8 +4,6 @@ const dlcDatabase = [
     // Tambahkan list lainnya di sini...
 ];
 
-const apiKey = "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";
-
 async function generateAiSummary(item) {
     const aiBox = document.getElementById('modal-ai-info');
     aiBox.innerHTML = "Menganalisis konten...";
