@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KelzNxT DLC Free - Password Only Management</title>
+    <title>KelzNxT DLC Free - Public View & Staff Management</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -61,6 +61,7 @@
         </div>
     </header>
 
+    <!-- MODAL BOX LOGIN -->
     <div id="login-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
         <div class="bg-darkCard border border-gray-800 p-6 rounded-2xl w-full max-w-sm shadow-2xl">
             <div class="flex justify-between items-center mb-4">
@@ -78,6 +79,7 @@
     </div>
 
     <main id="repository" class="container mx-auto px-4 py-8 flex-grow">
+        <!-- Filter & Search -->
         <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-10 pb-6 border-b border-gray-800">
             <div class="flex flex-wrap p-1.5 bg-gray-900/90 border border-gray-800 rounded-2xl gap-1">
                 <button onclick="filterCategory('all')" id="tab-all" class="tab-btn px-5 py-2.5 rounded-xl text-sm font-bold transition-all bg-accentBlue text-white shadow-blue-glow border-b-2 border-blue-800">All DLC</button>
@@ -99,6 +101,7 @@
         </div>
     </main>
 
+    <!-- CONTAINER MODAL DETAIL -->
     <div id="detail-modal" class="fixed inset-0 z-50 overflow-y-auto hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
         <div class="bg-darkCard border border-gray-800 rounded-3xl w-full max-w-3xl max-h-[90vh] overflow-y-auto shadow-2xl relative transform transition-all scale-95 opacity-0 duration-300" id="modal-card">
             <div class="p-6 border-b border-gray-800 flex justify-between items-start sticky top-0 bg-darkCard/95 backdrop-blur-sm z-10">
@@ -136,9 +139,11 @@
         </div>
     </div>
 
+    <!-- PANEL SUBMIT & CONTROL (HANYA UNTUK STAFF) -->
     <section id="management-section" class="bg-gray-900 border-t border-gray-800 py-16 hidden">
         <div class="container mx-auto px-4 max-w-5xl grid grid-cols-1 lg:grid-cols-3 gap-8">
             
+            <!-- FORM UPLOAD / EDIT DLC -->
             <div class="lg:col-span-2 bg-darkCard border border-gray-800 p-6 rounded-2xl shadow-xl">
                 <h3 id="form-title" class="text-lg font-bold text-white mb-4 flex items-center gap-2"><i class="fa-solid fa-cloud-arrow-up text-accentBlue"></i> Upload DLC Baru</h3>
                 <form id="admin-upload-form" onsubmit="saveDlcEngine(event)" class="space-y-4 text-sm">
@@ -165,6 +170,7 @@
                 </form>
             </div>
 
+            <!-- PANEL TAMBAH ADMIN (KHUSUS OWNER) -->
             <div id="owner-management-panel" class="bg-darkCard border border-gray-800 p-6 rounded-2xl shadow-xl hidden">
                 <h3 class="text-base font-bold text-white mb-4 flex items-center gap-2 text-accentYellow"><i class="fa-solid fa-users-gear"></i> Pembuat Admin (Owner Only)</h3>
                 <form onsubmit="handleCreateAdmin(event)" class="space-y-3 text-xs mb-6 pb-6 border-b border-gray-800/60">
@@ -186,19 +192,98 @@
     </footer>
 
     <script>
+        // DATABASE FIXED - 100% SESUAI DATA VALID MILIK LU
         const defaultDatabase = [
-            { id: 1, title: "Actions & Stuff", category: "Textures", image: "https://i.ibb.co/sdjNFz6B/image-13-2.png", youtubeId: "ZuCoxvRGruM", downloadUrl: "https://www.mediafire.com/file/zl0n5l3luuh8qw2/Actions_%2526_Stuff_1.11.zip/file", fileSize: "25.92 MB", version: "1.26.23+", author: "Overille Studios", extension: "mcpack", uploader: "Owner Utama" }
+            { 
+                id: 1, 
+                title: "Actions & Stuff", 
+                category: "Textures", 
+                image: "https://i.ibb.co/sdjNFz6B/image-13-2.png", 
+                youtubeId: "ZuCoxvRGruM", 
+                downloadUrl: "https://www.mediafire.com/file/zl0n5l3luuh8qw2/Actions_%2526_Stuff_1.11.zip/file", 
+                fileSize: "25.92 MB", 
+                version: "1.26.23+", 
+                author: "Overille Studios", 
+                extension: "mcpack", 
+                uploader: "Owner Utama" 
+            },
+            {
+                id: 2,
+                title: "DIY Paintings",
+                category: "Add-ons",
+                image: "https://i.ibb.co/nNN6R4bS/image-13-3.png",
+                youtubeId: "VKmjR_xygrc",
+                downloadUrl: "https://www.mediafire.com/file/z7qm8um8het122v/DIY+Paintings+Add-On+(addon).mcaddon/file",
+                fileSize: "969.50 KB",           
+                version: "1.26.23+",           
+                author: "Bedrock Productions",           
+                extension: "mcaddon",
+                uploader: "Owner Utama"
+            },
+            {
+                id: 3,
+                title: "Magical Furniture",
+                category: "Add-ons",           
+                image: "https://i.ibb.co/RT8vGHHs/image-13-7.png", 
+                youtubeId: "MPrlwMyYAlo",                
+                downloadUrl: "https://www.mediafire.com/file/zhu5l48w17mmn93/Magical+Furniture+Add-On+(addon).mcaddon/file",             
+                fileSize: "4.49 MB",           
+                version: "1.26.23+",            
+                author: "Odyssey Builds",        
+                extension: "mcaddon",
+                uploader: "Owner Utama"
+            },
+            {
+                id: 4,
+                title: "DNA",
+                category: "Add-ons",              
+                image: "https://i.ibb.co/1tYyKKbn/image-13-6.png", 
+                youtubeId: "gS96ug4u4WI",                
+                downloadUrl: "https://www.mediafire.com/file/5mo89b155ywlvbc/DNA+Add-On+(addon).mcaddon/file",             
+                fileSize: "1007.89 KB",           
+                version: "1.26.23+",            
+                author: "CodeStudios",        
+                extension: "mcaddon",
+                uploader: "Owner Utama"
+            },
+            {
+                id: 5,
+                title: "Rune Spells",
+                category: "Add-ons",              
+                image: "https://i.ibb.co/5XSmwj6r/image-13-5.png", 
+                youtubeId: "K9y7DHnpH98",                
+                downloadUrl: "https://www.mediafire.com/file/vw59tapoq9qjvm4/Rune+Spells+(addon).mcaddon/file",             
+                fileSize: "2.44 MB",           
+                version: "1.26.23+",            
+                author: "Gearblocks",        
+                extension: "mcaddon",
+                uploader: "Owner Utama"
+            },
+            {
+                id: 6,
+                title: "Eternal Caves",
+                category: "Add-ons",              
+                image: "https://i.ibb.co/Zp3MBMcG/image-13-4.png", 
+                youtubeId: "QFSbJAdV-ps",                
+                downloadUrl: "https://www.mediafire.com/file/apgcbmeke8zwi0x/Eternal+Caves+Add-On+(addon).mcaddon/file",             
+                fileSize: "14.23 MB",           
+                version: "1.26.23+",            
+                author: "Panascias",        
+                extension: "mcaddon",
+                uploader: "Owner Utama"
+            }
         ];
 
-        // Database Akun hanya dicocokkan lewat Password Unik
         const defaultUsers = [
             { id: "u1", name: "Owner Utama", pass: "owner123", role: "owner" },
             { id: "u2", name: "Admin Utama 1", pass: "admin123", role: "admin" }
         ];
 
-        let dlcDatabase = JSON.parse(localStorage.getItem('knx_dlc_database')) || defaultDatabase;
-        let usersDatabase = JSON.parse(localStorage.getItem('knx_users_database')) || defaultUsers;
+        // Hybrid System Engine
+        let localUploadedData = JSON.parse(localStorage.getItem('knx_dlc_database_custom')) || [];
+        let dlcDatabase = [...defaultDatabase, ...localUploadedData];
         
+        let usersDatabase = JSON.parse(localStorage.getItem('knx_users_database')) || defaultUsers;
         let currentUser = JSON.parse(sessionStorage.getItem('knx_current_session')) || null;
         let activeFilter = 'all';
         let activeSearch = '';
@@ -222,6 +307,7 @@
                     updateAuthInterface();
                     resetFormState();
                     alert("Anda berhasil logout.");
+                    executeFilterEngine();
                 } else {
                     modal.classList.remove('hidden');
                 }
@@ -230,11 +316,9 @@
             }
         }
 
-        // PROSES LOGIN HANYA DENGAN MENCOCOKKAN PASSWORD
         function handlePasswordLogin(event) {
             event.preventDefault();
             const passInput = document.getElementById('login-pass').value.trim();
-
             const matchedUser = usersDatabase.find(u => u.pass === passInput);
 
             if (matchedUser) {
@@ -244,6 +328,7 @@
                 toggleLoginModal(false);
                 document.getElementById('login-pass').value = '';
                 alert(`Akses Diterima! Selamat datang, ${currentUser.name}.`);
+                executeFilterEngine();
             } else {
                 alert("Password Salah atau Tidak Terdaftar!");
             }
@@ -275,7 +360,6 @@
             }
         }
 
-        // BUAT ADMIN BARU BERDASARKAN PASSWORD (KHUSUS OWNER)
         function handleCreateAdmin(event) {
             event.preventDefault();
             if (!currentUser || currentUser.role !== 'owner') return;
@@ -284,7 +368,7 @@
             const pass = document.getElementById('new-admin-pass').value.trim();
 
             if (usersDatabase.some(u => u.pass === pass)) {
-                alert("Password tersebut sudah dipakai oleh staff lain! Buat password yang berbeda.");
+                alert("Password tersebut sudah dipakai oleh staff lain!");
                 return;
             }
 
@@ -310,11 +394,122 @@
             }
         }
 
+        function saveDlcEngine(event) {
+            event.preventDefault();
+            if (!currentUser) return;
+
+            const editId = document.getElementById('edit-dlc-id').value;
+            const title = document.getElementById('admin-title').value;
+            const author = document.getElementById('admin-author').value;
+            const category = document.getElementById('admin-category').value;
+            const size = document.getElementById('admin-size').value;
+            const ext = document.getElementById('admin-ext').value;
+            const image = document.getElementById('admin-image').value;
+            const version = document.getElementById('admin-version').value;
+            const downloadUrl = document.getElementById('admin-download').value;
+            let youtubeId = document.getElementById('admin-youtube').value || "#";
+
+            if (youtubeId && youtubeId !== "#" && youtubeId.includes('/')) {
+                youtubeId = youtubeId.split('/').pop().split('?')[0].split('&')[0];
+            }
+
+            if (editId) {
+                const isDefaultItem = defaultDatabase.some(x => x.id == editId);
+                if (isDefaultItem) {
+                    alert("Konten bawaan tidak bisa diedit via web! Harus edit dari file HTML langsung.");
+                    return;
+                }
+
+                const customIndex = localUploadedData.findIndex(x => x.id == editId);
+                if (customIndex !== -1) {
+                    if (currentUser.role !== 'owner' && localUploadedData[customIndex].uploader !== currentUser.name) {
+                        alert("Akses Ditolak!");
+                        return;
+                    }
+                    localUploadedData[customIndex] = {
+                        ...localUploadedData[customIndex],
+                        title, author, category, fileSize: size, extension: ext, image, version, downloadUrl, youtubeId
+                    };
+                }
+                alert(`Konten "${title}" berhasil diperbarui.`);
+            } else {
+                const allIds = dlcDatabase.map(x => x.id);
+                const nextId = allIds.length > 0 ? Math.max(...allIds) + 1 : 1;
+                
+                const newDlc = {
+                    id: nextId, title, category, image, youtubeId, downloadUrl, fileSize: size, version, author, extension: ext,
+                    uploader: currentUser.name
+                };
+                localUploadedData.push(newDlc);
+                alert(`Konten "${title}" sukses diterbitkan ke publik.`);
+            }
+
+            localStorage.setItem('knx_dlc_database_custom', JSON.stringify(localUploadedData));
+            dlcDatabase = [...defaultDatabase, ...localUploadedData];
+            
+            executeFilterEngine();
+            resetFormState();
+        }
+
+        function startEditDlc(id) {
+            const target = dlcDatabase.find(x => x.id == id);
+            if (!target || !currentUser) return;
+
+            if (defaultDatabase.some(x => x.id == id)) {
+                alert("Item default dikunci. Edit manual di VS Code!");
+                return;
+            }
+
+            if (currentUser.role !== 'owner' && target.uploader !== currentUser.name) {
+                alert("Akses Ilegal!");
+                return;
+            }
+
+            closeModal();
+
+            document.getElementById('edit-dlc-id').value = target.id;
+            document.getElementById('admin-title').value = target.title;
+            document.getElementById('admin-author').value = target.author;
+            document.getElementById('admin-category').value = target.category;
+            document.getElementById('admin-size').value = target.fileSize;
+            document.getElementById('admin-ext').value = target.extension;
+            document.getElementById('admin-image').value = target.image;
+            document.getElementById('admin-version').value = target.version;
+            document.getElementById('admin-download').value = target.downloadUrl;
+            document.getElementById('admin-youtube').value = target.youtubeId;
+
+            document.getElementById('form-title').innerHTML = `<i class="fa-solid fa-pen-to-square text-accentYellow"></i> Mode Edit: ${target.title}`;
+            document.getElementById('submit-form-btn').innerText = "Simpan Perubahan";
+            document.getElementById('cancel-edit-btn').classList.remove('hidden');
+            
+            window.location.hash = "management-section";
+        }
+
+        function deleteDlc(id) {
+            if (!currentUser || currentUser.role !== 'owner') return;
+            
+            if (defaultDatabase.some(x => x.id == id)) {
+                alert("Item bawaan tidak bisa dihapus lewat web!");
+                return;
+            }
+
+            const target = localUploadedData.find(x => x.id == id);
+            if (!target) return;
+
+            if (confirm(`Hapus permanen "${target.title}"?`)) {
+                localUploadedData = localUploadedData.filter(x => x.id != id);
+                localStorage.setItem('knx_dlc_database_custom', JSON.stringify(localUploadedData));
+                dlcDatabase = [...defaultDatabase, ...localUploadedData];
+                closeModal();
+                executeFilterEngine();
+                alert("Konten sukses dihapus.");
+            }
+        }
+
         function changeAdminRole(userId, currentRole) {
             if (!currentUser || currentUser.role !== 'owner') return;
             const newRole = currentRole === 'admin' ? 'owner' : 'admin';
-            
-            if (confirm(`Ubah peran ${usersDatabase.find(u => u.id === userId).name} menjadi [${newRole.toUpperCase()}]?`)) {
+            if (confirm(`Ubah peran menjadi [${newRole.toUpperCase()}]?`)) {
                 usersDatabase = usersDatabase.map(u => u.id === userId ? { ...u, role: newRole } : u);
                 localStorage.setItem('knx_users_database', JSON.stringify(usersDatabase));
                 renderAdminList();
@@ -347,99 +542,6 @@
                 `;
                 container.insertAdjacentHTML('beforeend', row);
             });
-        }
-
-        // ENGINE SUBMIT KONTEN DLC
-        function saveDlcEngine(event) {
-            event.preventDefault();
-            if (!currentUser) return;
-
-            const editId = document.getElementById('edit-dlc-id').value;
-            const title = document.getElementById('admin-title').value;
-            const author = document.getElementById('admin-author').value;
-            const category = document.getElementById('admin-category').value;
-            const size = document.getElementById('admin-size').value;
-            const ext = document.getElementById('admin-ext').value;
-            const image = document.getElementById('admin-image').value;
-            const version = document.getElementById('admin-version').value;
-            const downloadUrl = document.getElementById('admin-download').value;
-            let youtubeId = document.getElementById('admin-youtube').value || "#";
-
-            if (youtubeId && youtubeId !== "#" && youtubeId.includes('/')) {
-                youtubeId = youtubeId.split('/').pop().split('?')[0].split('&')[0];
-            }
-
-            if (editId) {
-                const dlcIndex = dlcDatabase.findIndex(x => x.id == editId);
-                if (dlcIndex === -1) return;
-
-                const currentDlc = dlcDatabase[dlcIndex];
-                if (currentUser.role !== 'owner' && currentDlc.uploader !== currentUser.name) {
-                    alert("Akses Ditolak! Anda hanya boleh mengedit DLC milik Anda sendiri.");
-                    return;
-                }
-
-                dlcDatabase[dlcIndex] = {
-                    ...currentDlc,
-                    title, author, category, fileSize: size, extension: ext, image, version, downloadUrl, youtubeId
-                };
-                alert(`Konten "${title}" berhasil diperbarui.`);
-            } else {
-                const nextId = dlcDatabase.length > 0 ? Math.max(...dlcDatabase.map(x => x.id)) + 1 : 1;
-                const newDlc = {
-                    id: nextId, title, category, image, youtubeId, downloadUrl, fileSize: size, version, author, extension: ext,
-                    uploader: currentUser.name
-                };
-                dlcDatabase.push(newDlc);
-                alert(`Konten "${title}" sukses diterbitkan.`);
-            }
-
-            localStorage.setItem('knx_dlc_database', JSON.stringify(dlcDatabase));
-            executeFilterEngine();
-            resetFormState();
-        }
-
-        function startEditDlc(id) {
-            const target = dlcDatabase.find(x => x.id == id);
-            if (!target || !currentUser) return;
-
-            if (currentUser.role !== 'owner' && target.uploader !== currentUser.name) {
-                alert("Akses Ilegal!");
-                return;
-            }
-
-            closeModal();
-
-            document.getElementById('edit-dlc-id').value = target.id;
-            document.getElementById('admin-title').value = target.title;
-            document.getElementById('admin-author').value = target.author;
-            document.getElementById('admin-category').value = target.category;
-            document.getElementById('admin-size').value = target.fileSize;
-            document.getElementById('admin-ext').value = target.extension;
-            document.getElementById('admin-image').value = target.image;
-            document.getElementById('admin-version').value = target.version;
-            document.getElementById('admin-download').value = target.downloadUrl;
-            document.getElementById('admin-youtube').value = target.youtubeId;
-
-            document.getElementById('form-title').innerHTML = `<i class="fa-solid fa-pen-to-square text-accentYellow"></i> Mode Edit: ${target.title}`;
-            document.getElementById('submit-form-btn').innerText = "Simpan Perubahan";
-            document.getElementById('cancel-edit-btn').classList.remove('hidden');
-            
-            window.location.hash = "management-section";
-        }
-
-        function deleteDlc(id) {
-            if (!currentUser || currentUser.role !== 'owner') return;
-            const target = dlcDatabase.find(x => x.id == id);
-            if (!target) return;
-
-            if (confirm(`Hapus permanen "${target.title}" dari katalog publik?`)) {
-                dlcDatabase = dlcDatabase.filter(x => x.id != id);
-                localStorage.setItem('knx_dlc_database', JSON.stringify(dlcDatabase));
-                closeModal();
-                executeFilterEngine();
-                alert("Konten sukses dihapus.");
-            }
         }
 
         function resetFormState() {
